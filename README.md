@@ -1,14 +1,14 @@
 # Simple Todo App
 
-Give a brief description of the project here. Feel free to give it a different name.
+This is a website where you can keep a to do list. Items can be added, deleted, given due dates, and marked as complete when done.
 
 ## Functionality
 
-Give a more detailed explanation of the project and its functionality.
+You can add a to do item and have the option to give it a due date. The item can be checked off as completed when done. Items can be deleted from the to do list as well.
 
 ## Technology
 
-Give a description of the technologies and techniques used. Pictures, GIFs, or screenshots that detail the project features are recommended.
+HTML, CSS, and Javascript are used in this project. Javascript modules are used to help organize the code.
 
 ## Deployment
 
