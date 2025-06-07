@@ -38,8 +38,9 @@ addTodoForm.addEventListener("submit", (evt) => {
   evt.preventDefault();
   const name = evt.target.name.value;
   const dateInput = evt.target.date.value;
+  const buttonElement = document.querySelector(".popup__button");
   evt.target.reset();
-  buttonElement.classList.add(this._inactiveButtonClass);
+  buttonElement.classList.add(".button_disabled");
   buttonElement.disabled = true;
 
   // Create a date object and adjust for timezone
