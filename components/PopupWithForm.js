@@ -12,15 +12,8 @@ class PopupWithForm extends Popup {
   _getInputValues() {
     const inputValues = {};
     this._inputList.forEach((input) => {
-      //TODO add a key/value pair for each input
-      //the key is input.name
-      //the value is input.value
-      //refer back to first objects lesson in sprint 4?
-      //use braclets notation, not dot notation
-      //ONE line of code is all that's needed
       inputValues[input.name] = input.value;
     });
-    console.log(inputValues);
     return inputValues;
   }
 
@@ -29,8 +22,6 @@ class PopupWithForm extends Popup {
     this._popupForm.addEventListener("submit", (event) => {
       event.preventDefault();
       const inputValues = this._getInputValues();
-      //TODO pass result of _getInputValues to submission handler
-      //call handleFormSubmit
 
       this._handleFormSubmit(inputValues);
     });
