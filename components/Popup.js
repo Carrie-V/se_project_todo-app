@@ -23,13 +23,13 @@ class Popup {
 
   setEventListeners() {
     this._popupElement.addEventListener("mousedown", (event) => {
-      const popupContent = document.querySelector(".popup__content");
+      //const popupContent = document.querySelector(".popup__content");
 
       if (
         event.target.classList.contains("popup__close") ||
-        (event.target.classList.contains("popup_visible") &&
-          !popupContent.contains(event.target))
+        event.target.classList.contains("popup_visible")
       ) {
+        //!popupContent.contains(event.target))
         this.close();
       }
     });

@@ -12,11 +12,16 @@ const addTodoForm = document.forms["add-todo-form"];
 
 const todoCounter = new TodoCounter(initialTodos, ".counter__text");
 
+const renderTodo = (item) => {
+  const todo = generateTodo(item);
+  section.addItem(todo);
+};
+
 const addTodoPopup = new PopupWithForm({
   popupSelector: "#add-todo-popup",
   handleFormSubmit: (inputValues) => {
-    const todoInputValues = addTodoPopup._getInputValues();
-    generateTodo(todoInputValues);
+    //const todoInputValues = addTodoPopup._getInputValues();
+    //generateTodo(todoInputValues);
     newTodoValidator.resetValidation();
 
     const name = inputValues.name;
@@ -25,8 +30,8 @@ const addTodoPopup = new PopupWithForm({
 
     const id = uuidv4();
     const values = { name, date, id };
-    const todo = generateTodo(values);
-    section.addItem(todo);
+    renderTodo(values);
+    todoCounter.updateTotal(true);
     addTodoPopup.close();
   },
 });
@@ -36,15 +41,14 @@ addTodoPopup.setEventListeners();
 const generateTodo = (data) => {
   const todo = new Todo(data, "#todo-template", handleCheck, handleDelete);
   const todoElement = todo.getView();
-  todoCounter.updateTotal(data.id);
+  //todoCounter.updateTotal(data.id);
   return todoElement;
 };
 
 const section = new Section({
   items: initialTodos,
   renderer: (item) => {
-    const todo = generateTodo(item);
-    section.addItem(todo);
+    renderTodo(item);
   },
   containerSelector: ".todos__list",
 });
