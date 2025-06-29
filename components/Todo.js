@@ -31,6 +31,7 @@ class Todo {
 
   _removeTodo = () => {
     this._todoElement.remove();
+    this._todoElement = null;
   };
 
   _toggleComplete = () => {
